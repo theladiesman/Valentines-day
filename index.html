@@ -107,7 +107,8 @@ button{
 <body>
 
 <main class="card">
-<h1>Adu, will you be my valentine?</h1>
+<h1 id="mainHeading">Adu, will you be my valentine?</h1>
+
 
 <div class="countdown" id="since"></div>
 <div class="countdown" id="until"></div>
@@ -161,10 +162,18 @@ function updateTime(){
 setInterval(updateTime,1000);
 updateTime();
 
-document.getElementById("yesBtn").onclick=()=>{
- document.getElementById("result").style.display="block";
- confetti();
+document.getElementById("yesBtn").onclick = () => {
+  // hide both buttons after YES 💖
+  document.getElementById("yesBtn").style.display = "none";
+  document.getElementById("noBtn").style.display = "none";
+
+  // show result content
+  document.getElementById("result").style.display = "block";
+
+  // celebration 🎉
+  confetti();
 };
+
 
 function showLetter(){
  document.getElementById("letter").style.display="block";
