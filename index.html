@@ -185,12 +185,15 @@ setInterval(updateTime,1000);
 updateTime();
 
 document.getElementById("yesBtn").onclick = () => {
-  // change the main question text 💖
+  // enable scrolling after YES 💖
+  document.body.style.overflow = "auto";
+
+  // change the main question text
   const heading = document.getElementById("mainHeading");
   heading.innerHTML = "You said YES!!! 💖💖💖";
   heading.style.animation = "pop .4s ease";
 
-  // hide buttons after YES
+  // hide buttons
   document.getElementById("yesBtn").style.display = "none";
   document.getElementById("noBtn").style.display = "none";
 
