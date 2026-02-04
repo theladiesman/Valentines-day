@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Will you be my Valentine?</title>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<style>
+:root {
+  --bg1:#ffd6e7;
+  --bg2:#ffeef6;
+  --card:#ffffffcc;
+  --yes:#ff3b7a;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  background:radial-gradient(circle at top,var(--bg2),var(--bg1));
+  font-family:system-ui,sans-serif;
+  overflow:hidden;
+}
+
+.card{
+  width:min(720px,92vw);
+  padding:26px;
+  background:var(--card);
+  backdrop-filter:blur(10px);
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 18px 60px rgba(0,0,0,.15);
+}
+
+h1{font-size:clamp(26px,4vw,44px);}
+
+button{
+  padding:16px 24px;
+  font-size:18px;
+  font-weight:800;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+}
+
+#yesBtn{background:var(--yes);color:#fff;}
+#noBtn{background:#e5e7eb;}
+
+.result{display:none;margin-top:20px;animation:pop .4s ease}
+
+@keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1}}
+
+.countdown{
+  margin:14px 0;
+  font-size:15px;
+  font-weight:600;
+  opacity:.85;
+}
+
+.reveal{
+  margin-top:16px;
+  cursor:pointer;
+  color:#ff3b7a;
+  font-weight:700;
+}
+
+.letter{
+  display:none;
+  margin-top:14px;
+  padding:16px;
+  background:#fff;
+  border-radius:14px;
+  animation:pop .4s ease;
+}
+
+.days{
+  margin-top:18px;
+  display:grid;
+  gap:8px;
+  font-size:14px;
+}
+
+.day{
+  background:#fff;
+  padding:10px;
+  border-radius:12px;
+}
+
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:18px;
+  color:#ff4d7d;
+  opacity:.5;
+  animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+  to{transform:translateY(-110vh) scale(1.6);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<main class="card">
+<h1>Adu, will you be my valentine?</h1>
+
+<div class="countdown" id="since"></div>
+<div class="countdown" id="until"></div>
+
+<button id="yesBtn">Yes</button>
+<button id="noBtn">No</button>
+
+<div class="result" id="result">
+  <h2>advaitha, happy valentine’s day 💖</h2>
+
+  <div class="reveal" onclick="showLetter()">Click to reveal 💌</div>
+  <div class="letter" id="letter">
+    [ write your love letter here ❤️ ]
+  </div>
+
+  <div class="days">
+    <div class="day">🌹 Rose Day – for the love that blooms endlessly</div>
+    <div class="day">💍 Propose Day – choosing you every time</div>
+    <div class="day">🍫 Chocolate Day – sweet moments with you</div>
+    <div class="day">🧸 Teddy Day – comfort, warmth, us</div>
+    <div class="day">🤝 Promise Day – always, no matter what</div>
+    <div class="day">💋 Kiss Day – unspoken love</div>
+    <div class="day">❤️ Valentine’s Day – you & me</div>
+  </div>
+</div>
+</main>
+
+<script>
+const startDate = new Date("2025-03-28T00:00:00");
+const valDay = new Date(new Date().getFullYear(),1,14);
+
+function updateTime(){
+  const now = new Date();
+
+  let diff = now - startDate;
+  document.getElementById("since").innerText =
+   "Since we became official: " +
+   Math.floor(diff/86400000)+" days · "+
+   new Date(diff).getUTCHours()+" hrs · "+
+   new Date(diff).getUTCMinutes()+" mins · "+
+   new Date(diff).getUTCSeconds()+" secs";
+
+  let d = valDay - now;
+  document.getElementById("until").innerText =
+   "Until Valentine’s Day: " +
+   Math.floor(d/86400000)+" days · "+
+   new Date(d).getUTCHours()+" hrs · "+
+   new Date(d).getUTCMinutes()+" mins · "+
+   new Date(d).getUTCSeconds()+" secs";
+}
+setInterval(updateTime,1000);
+updateTime();
+
+document.getElementById("yesBtn").onclick=()=>{
+ document.getElementById("result").style.display="block";
+ confetti();
+};
+
+function showLetter(){
+ document.getElementById("letter").style.display="block";
+}
+
+setInterval(()=>{
+ const h=document.createElement("div");
+ h.className="heart";
+ h.innerText="💖";
+ h.style.left=Math.random()*100+"vw";
+ h.style.animationDuration=(6+Math.random()*4)+"s";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),10000);
+},600);
+</script>
+
+</body>
+</html>
