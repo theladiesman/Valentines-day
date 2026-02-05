@@ -101,6 +101,28 @@ button{
 @keyframes floatUp{
   to{transform:translateY(-110vh) scale(1.6);opacity:0}
 }
+/* ---------- VALENTINE DAY DROPDOWNS ---------- */
+
+.day {
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.day:hover {
+  background: #ffe6f0;
+}
+
+.day-content {
+  display: none;
+  margin-top: 10px;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.7;
+  animation: pop 0.35s ease;
+}
+
 </style>
 </head>
 
@@ -147,12 +169,227 @@ button{
 
 
   <div class="days">
-    <div class="day">🌹 Rose Day – for the love that blooms endlessly</div>
-    <div class="day">💍 Propose Day – choosing you every time</div>
-    <div class="day">🍫 Chocolate Day – sweet moments with you</div>
-    <div class="day">🧸 Teddy Day – comfort, warmth, us</div>
-    <div class="day">🤝 Promise Day – always, no matter what</div>
-    <div class="day">💋 Kiss Day – unspoken love</div>
+    <div class="day" onclick="toggleDay('roseDay')">
+  🌹 Rose Day – for the love that blooms endlessly
+</div>
+
+<div class="day-content" id="roseDay">
+  Happy Rose Day my lovee 🌹❤️  
+
+  If I could give you a rose for every reason I love you,  
+  the world would honestly run out of flowers 🌍🌹  
+
+  You give me every reason to never give up.  
+  You keep watering these flowers that are never going to die —  
+  our love, our bond, us 💞  
+
+  You are the reason I am where I am today —  
+  emotionally, mentally, and physically 🫶  
+
+  No amount of roses I give you will ever be enough.  
+  I feel like giving you roses all day, every day, baby 🌹🥺  
+
+  Because the real beauty isn’t in the flowers…  
+  it’s in you ✨  
+
+  I wish I could give you roses just like the other couples —  
+  but I will baby, sooner or later 🌍🤍  
+
+  I love you a lot jaanuu 💘  
+  Happy Rose Day once again 🌹✨
+</div>
+
+    <div class="day" onclick="toggleDay('proposeDay')">
+  💍 Propose Day – choosing you every time
+</div>
+
+<div class="day-content" id="proposeDay">
+  Happy Propose Day babyyyyy 💍🥺💖  
+
+  If I could, I’d officially propose to you right now —  
+  on this very day, for marriage 🙈💍  
+
+  But jokes aside…  
+  I’d choose you forever ❤️  
+
+  I won’t promise perfection —  
+  but I promise choosing you.  
+  On good days, bad days,  
+  and all the boring days in between 🤍  
+
+  You’re the only person I want to spend the rest of my life with.  
+  And you make it feel so easy, so natural 🫶  
+
+  You’re the best thing that’s ever happened to me and my life, baby 💖  
+
+  I just want to be with you —  
+  and I will be with you soon 🥹✨  
+
+  Happy Propose Day babyyyy 💍❤️  
+  I hope you like(d) the proposal 😌💌  
+  Muahhhhh 😘💋
+</div>
+
+    <div class="day" onclick="toggleDay('chocolateDay')">
+  🍫 Chocolate Day – sweet moments with you
+</div>
+
+<div class="day-content" id="chocolateDay">
+  Happy Chocolate Dayyy my loveee 🍫🤎  
+
+  You know… life is just sweeter with you in it —  
+  not because you make it perfect,  
+  but because you make it lighter 🥺✨  
+
+  Everything feels easier when you’re around.  
+  The bad days don’t feel as heavy,  
+  and the good days feel even better 💞  
+
+  I still remember the first time I gave you a KitKat 🍫  
+  I felt so happy when you took it —  
+  something so small, yet it meant so much to me 🥹  
+
+  And every single time after that,  
+  whenever I gave you a chocolate and you took it,  
+  I felt that same happiness all over again 🤍  
+
+  It was never really about the chocolate…  
+  it was about you accepting something from me,  
+  about sharing these little moments together 💖  
+
+  Just like chocolates,  
+  you’ve added sweetness to my life in ways I can’t even explain 🍬✨  
+
+  Happy Chocolate Day babyyyy 🍫❤️  
+  Always yours 💌
+</div>
+
+    <div class="day" onclick="toggleDay('teddyDay')">
+  🧸 Teddy Day – comfort, warmth, us
+</div>
+
+<div class="day-content" id="teddyDay">
+  Happy Teddy Dayyy my cutieeeeeee 🧸🥺💖  
+
+  I just wanna cuddle you like a teddy —
+  hold you close and never let go 🤍  
+  You’re sooo cuteee, it honestly melts my heart 🥹  
+
+  But it’s more than just that…  
+  Whenever the world feels heavy,  
+  I want to be the place you come to 🌍🫶  
+  Just like you are for me. Always.  
+
+  And for that, I promise I’ll do my best  
+  to be the best version of myself for you,  
+  in every way that matters 💞  
+
+  Just like a teddy,  
+  I want to hold you close  
+  always close to my heart ❤️  
+  wrapped safely in my arms 🤍  
+
+  I just want to give you all the warmth  
+  you want, you need, and even the warmth  
+  you don’t realise you need yet 🥺✨  
+
+  Happy Teddy Day babyyyy 🧸💖  
+  I’m always here for you.
+</div>
+
+   <div class="day" onclick="toggleDay('promiseDay')">
+  🤝 Promise Day – always, no matter what
+</div>
+
+<div class="day-content" id="promiseDay">
+  Happy Promise Day my love 🤝❤️  
+
+  Today isn’t about big words —  
+  it’s about the ones that actually matter 🤍  
+
+  I know I’ve made promises before  
+  and I haven’t stuck to all of them…  
+  but this — this is real 🫶  
+
+  I promise to choose you —  
+  not just when it’s easy,  
+  but especially when it’s hard 🤍  
+
+  I promise to listen to you,  
+  even when I don’t fully understand yet.  
+  I promise to try, to learn,  
+  and to never stop growing for us 🌱  
+
+  I promise to become the best version of myself,  
+  so I can give you the future you truly deserve 💖  
+
+  I promise to stay.  
+  On the good days, the bad days,  
+  and on the days when everything feels heavy and confusing 🌧️☀️  
+
+  I promise to respect your feelings,  
+  even when they’re messy, emotional,  
+  or hard to explain.  
+  Your feelings will always be safe with me 🤍  
+
+  I promise to protect your heart  
+  even more than I protect my own 🥺❤️  
+
+  I promise to celebrate you,  
+  support your dreams like a cheerleader at college tryouts 📣😌  
+  and stand beside you  
+  as you become everything you want to be ✨  
+
+  I won’t promise perfection —  
+  but I promise effort.  
+  I promise love that stays,  
+  love that grows,  
+  and love that chooses you every single day 💞  
+
+  Happy Promise Day babyyyyyyyyyyy 🤝💖
+</div>
+
+<div class="day" onclick="toggleDay('kissDay')">
+  💋 Kiss Day – unspoken love
+</div>
+
+<div class="day-content" id="kissDay">
+  Happy Kiss Dayy babyyyy 💋😌❤️  
+
+  You know I always joke about when we’ll kiss or make out —  
+  and maybe I tease you a little too much 😏🙈  
+  but every kiss I imagine with you  
+  isn’t really about lips…  
+
+  It’s about feeling close.  
+  Feeling safe.  
+  Feeling home 🥺❤️  
+
+  It’s about those moments when the world goes quiet —  
+  when it’s just you and me,  
+  and nothing else matters 💞  
+
+  I imagine holding your face,  
+  looking at you for a second longer than necessary,  
+  smiling… and then leaning in 😌💋  
+
+  Not because I can’t wait —  
+  but because I don’t want the moment to ever end 🫶  
+
+  Every kiss with you,  
+  even the ones that exist only in my head,  
+  feels warm, slow, and full of love 🤍  
+
+  I want to stay in that moment forever.  
+
+  And trust me baby…  
+  when it finally happens,  
+  it’ll be worth the wait 😏💖  
+
+  Saving all my kisses for you 💋❤️  
+  Happy Kiss Day babyyyyy 😘
+</div>
+
     <div class="day">❤️ Valentine’s Day – you & me</div>
   </div>
 </div>
