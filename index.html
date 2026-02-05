@@ -487,21 +487,20 @@ noBtn.addEventListener("click", () => {
   yesScale = Math.min(2.2, yesScale + 0.15);
   yesBtn.style.transform = `scale(${yesScale})`;
 }); 
-// ---------- TOGGLE VALENTINE DAY DROPDOWNS ----------
-function toggleDay(dayId) {
-  const content = document.getElementById(dayId);
+  // ---------- TOGGLE VALENTINE DAY DROPDOWNS ----------
+  function toggleDay(dayId) {
+    const content = document.getElementById(dayId);
 
-  // close other open days
-  document.querySelectorAll(".day-content").forEach(el => {
-    if (el.id !== dayId) el.style.display = "none";
-  });
+    document.querySelectorAll(".day-content").forEach(el => {
+      if (el.id !== dayId) el.style.display = "none";
+    });
 
-  // toggle selected day
-  content.style.display =
-    content.style.display === "block" ? "none" : "block";
-}
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
+  }
+</script>
 
-
-<script>
 </body>
 </html>
+
+
