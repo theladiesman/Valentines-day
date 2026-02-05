@@ -487,6 +487,19 @@ noBtn.addEventListener("click", () => {
   yesScale = Math.min(2.2, yesScale + 0.15);
   yesBtn.style.transform = `scale(${yesScale})`;
 }); 
+<script>
+  // all your other JS above
+  // hearts
+  // yes button
+  // countdowns
+  // etc...
+
+  // ---------- ROSE DAY TOGGLE ----------
+  document.getElementById("roseToggle").addEventListener("click", () => {
+    const content = document.getElementById("roseDay");
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
+  });
 </script>
 
 </body>
