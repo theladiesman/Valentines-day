@@ -96,7 +96,9 @@ button{
   color:#ff4d7d;
   opacity:.5;
   animation:floatUp linear forwards;
+  pointer-events: none; /* 👈 IMPORTANT */
 }
+
 
 @keyframes floatUp{
   to{transform:translateY(-110vh) scale(1.6);opacity:0}
